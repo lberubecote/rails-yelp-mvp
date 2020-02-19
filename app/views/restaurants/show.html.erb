@@ -1,0 +1,12 @@
+<h1><%= @restaurant.name %></h1>
+<p>Adress: <%= @restaurant.address %></p>
+<p>Phone-number: <%= @restaurant.phone_number %></p>
+<p>Category: <%= @restaurant.category %></p>
+<ul>
+<% @restaurant.reviews.each do |review| %>
+<li><%= review.content %></li>
+<% end %>
+</ul>
+
+<button class='btn btn-primary'><%= link_to'Home', restaurants_path, :style =>'color: white;'%></button>
+<button class='btn btn-primary'><%= link_to'Write a review', new_restaurant_review_path(params[:id]), :style =>'color: white;'%></button>
